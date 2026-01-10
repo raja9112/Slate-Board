@@ -1,4 +1,4 @@
-# DigiVault API Documentation
+# Slate-Board API Documention Framework
 
 Modern, beautiful API documentation powered by MkDocs Material with custom styling.
 
