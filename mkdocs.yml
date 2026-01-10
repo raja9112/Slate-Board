@@ -1,0 +1,176 @@
+# DigiVault API Documentation
+site_name: DigiVault API Documentation
+site_description: Complete API documentation for DigiVault - Learn everything there is to know about the DigiVault API
+site_author: DigiVault Team
+site_url: https://api.digivault.com
+
+# Repository (optional)
+# repo_name: digivault/api-docs
+# repo_url: https://github.com/digivault/api-docs
+# edit_uri: edit/main/docs/
+
+# Theme Configuration
+theme:
+  name: material
+  custom_dir: overrides
+  logo: assets/digivault-logo.svg
+  favicon: favicon.ico
+  
+  # Colors matching the mirrored site
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: emerald
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    
+    # Dark mode  
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: emerald
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  
+  font:
+    text: Inter
+    code: Fira Code
+  
+  features:
+    - announce.dismiss
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
+    - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.path
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    - toc.integrate
+
+# Plugins
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+      cache_safe: true
+
+# Extensions
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      permalink_title: Anchor link to this section
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      use_pygments: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Extra CSS and JS - Using original mirrored site assets
+extra_css:
+  # - _next/static/css/714180f250899703.css
+  - stylesheets/method-badges.css
+  - stylesheets/header-styles.css
+
+extra_javascript: []
+
+# Extra
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/digivault
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/digivault
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/digivault
+  
+  analytics:
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: Yes, it was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: No, it wasn't helpful
+          data: 0
+          note: >-
+            Thanks for your feedback! Help us improve this page by
+            <a href="https://github.com/bitvault/api-docs/issues/new" target="_blank" rel="noopener">opening an issue</a>.
+
+# Navigation Structure
+nav:
+  - Home: index.md
+  - Guides:
+      - Quickstart: quickstart.md
+      - SDKs: sdks.md
+      - Authentication: authentication.md
+      - Pagination: pagination.md
+      - Errors: errors.md
+      - Webhooks: webhooks.md
+  - Resources:
+      - Contacts: contacts.md
+      - Conversations: conversations.md
+      - Messages: messages.md
+      - Groups: groups.md
+      - Attachments: attachments.md
+
+# Copyright
+copyright: Copyright &copy; 2025 DigiVault. All rights reserved.
+
