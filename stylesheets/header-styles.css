@@ -1,0 +1,349 @@
+/* Enhanced Header Styling - Matching Mirrored Site */
+
+/* ============================================
+   IMPORTANT: Header Title Configuration
+   ============================================
+   The header should ONLY show the logo with "DigiVault Developers" text.
+   Page titles/headings should NEVER appear in the header nav bar.
+   This is enforced throughout this file with !important rules.
+   ============================================ */
+
+/* Header container */
+.md-header {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-bottom: 1px solid rgba(24, 24, 27, 0.075);
+  box-shadow: none;
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-md-color-scheme="slate"] .md-header {
+  background-color: rgba(24, 24, 27, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.075);
+}
+
+/* Add subtle shadow below header */
+.md-header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(24, 24, 27, 0.075), transparent);
+}
+
+[data-md-color-scheme="slate"] .md-header::after {
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.075), transparent);
+}
+
+/* Header inner spacing */
+.md-header__inner {
+  padding: calc(0.25rem * 4);
+  gap: calc(0.25rem * 12);
+}
+
+@media (min-width: 40rem) {
+  .md-header__inner {
+    padding-inline: calc(0.25rem * 6);
+  }
+}
+
+@media (min-width: 64rem) {
+  .md-header__inner {
+    padding-inline: calc(0.25rem * 8);
+  }
+}
+
+/* Logo - Icon + text "DigiVault Developers" */
+.md-header__button.md-logo {
+  letter-spacing: -0.01em;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Show logo image */
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  display: block !important;
+  height: 1.75rem;
+  width: 1.75rem;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Text will be added via JavaScript */
+.md-header__button.md-logo .logo-text-digivault {
+  color: #526cfe;
+  font-weight: 600;
+  font-size: 1.1875rem;
+}
+
+.md-header__button.md-logo .logo-text-developers {
+  color: oklch(70.5% .015 286.067);
+  font-weight: 400;
+  font-size: 0.9375rem;
+  margin-left: 0.25rem;
+}
+
+[data-md-color-scheme="slate"] .md-header__button.md-logo .logo-text-developers {
+  color: oklch(70.5% .015 286.067);
+}
+
+/* Move search to the right side */
+.md-search {
+  order: 10;
+  margin-left: auto;
+}
+
+/* Desktop-only search styling (Tablet and above) */
+@media (min-width: 60em) {
+  /* Search button/form styling - Match logo height */
+  .md-search__form {
+    height: 1.5rem;
+    width: 14rem;
+    border-radius: 9999px;
+    background-color: white;
+    border: 1px solid rgba(24, 24, 27, 0.1);
+    transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  .md-search__form:hover {
+    border-color: rgba(24, 24, 27, 0.2);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  [data-md-color-scheme="slate"] .md-search__form {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  [data-md-color-scheme="slate"] .md-search__form:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  /* Search input */
+  .md-search__input {
+    padding: calc(0.25rem * 1.5) calc(0.25rem * 3) calc(0.25rem * 1.5) calc(0.25rem * 2);
+    font-size: 0.8125rem;
+    line-height: 1rem;
+    color: oklch(55.2% .016 285.938);
+  }
+
+  .md-search__input::placeholder {
+    color: oklch(55.2% .016 285.938);
+  }
+
+  [data-md-color-scheme="slate"] .md-search__input {
+    color: oklch(70.5% .015 286.067);
+  }
+
+  [data-md-color-scheme="slate"] .md-search__input::placeholder {
+    color: oklch(70.5% .015 286.067);
+  }
+}
+
+/* Move theme toggle to far right with more spacing */
+.md-header__option {
+  order: 20;
+  margin-left: calc(0.25rem * 8);
+}
+
+/* Theme toggle button - Beautiful icon styling */
+.md-header__option label.md-icon {
+  width: calc(0.25rem * 6);
+  height: calc(0.25rem * 6);
+  border-radius: 0.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.md-header__option label.md-icon:hover {
+  background-color: rgba(24, 24, 27, 0.05);
+}
+
+[data-md-color-scheme="slate"] .md-header__option label.md-icon:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Theme toggle icon styling - Single icon */
+.md-header__option label.md-icon svg {
+  width: 2rem;
+  height: 2rem;
+  color: oklch(55.2% .016 285.938);
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.md-header__option label.md-icon:hover svg {
+  color: oklch(21% .006 285.885);
+  transform: rotate(15deg);
+}
+
+[data-md-color-scheme="slate"] .md-header__option label.md-icon svg {
+  color: oklch(70.5% .015 286.067);
+}
+
+[data-md-color-scheme="slate"] .md-header__option label.md-icon:hover svg {
+  color: #fff;
+}
+
+/* Hide second icon, show only one at a time */
+.md-header__option label.md-icon:not([for="__palette_0"]) {
+  display: none;
+}
+
+.md-header__option label.md-icon[for="__palette_0"][hidden] {
+  display: none;
+}
+
+.md-header__option label.md-icon[for="__palette_1"][hidden] {
+  display: none;
+}
+
+.md-header__option label.md-icon:not([hidden]) {
+  display: flex !important;
+}
+
+/* Search icon */
+.md-search__icon {
+  color: oklch(55.2% .016 285.938);
+}
+
+[data-md-color-scheme="slate"] .md-search__icon {
+  color: oklch(70.5% .015 286.067);
+}
+
+/* Hide header title completely (logo with text is enough) */
+/* This prevents page titles from showing in header on scroll/navigation */
+.md-header__title {
+  display: none !important;
+}
+
+/* Hide the topic/page title that appears on scroll */
+.md-header__topic {
+  display: none !important;
+}
+
+/* Ensure logo always visible and takes up space */
+.md-header__button.md-logo {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Prevent any header state changes */
+.md-header[data-md-state="shadow"] .md-header__title,
+.md-header--shadow .md-header__title {
+  display: none !important;
+}
+
+/* Mobile/Responsive Layout Fixes */
+@media (max-width: 76.1875em) {
+  /* Reset header layout for mobile */
+  .md-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  /* Burger menu on far left */
+  .md-header__button.md-icon[for="__drawer"] {
+    order: -1;
+    margin-right: auto;
+  }
+  
+  /* Hide logo completely on mobile (icon + DigiVault Developers text) */
+  .md-header__button.md-logo {
+    display: none !important;
+  }
+  
+  /* Hide logo text spans if they somehow render */
+  .logo-text-digivault,
+  .logo-text-developers {
+    display: none !important;
+  }
+  
+  /* Search and theme toggle on right */
+  .md-search {
+    order: 10;
+    margin-left: auto;
+  }
+  
+  .md-header__option {
+    order: 11;
+    margin-left: 0.5rem;
+  }
+}
+
+/* Mobile menu button */
+.md-header__button.md-icon {
+  width: calc(0.25rem * 6);
+  height: calc(0.25rem * 6);
+  border-radius: 0.375rem;
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.md-header__button.md-icon:hover {
+  background-color: rgba(24, 24, 27, 0.05);
+}
+
+[data-md-color-scheme="slate"] .md-header__button.md-icon:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Burger menu icon color - black in light mode, white in dark */
+.md-header__button.md-icon svg {
+  color: oklch(21% .006 285.885);
+}
+
+[data-md-color-scheme="slate"] .md-header__button.md-icon svg {
+  color: #fff;
+}
+
+/* Search icon color */
+.md-header__button.md-icon[for="__search"] svg {
+  color: oklch(55.2% .016 285.938);
+}
+
+[data-md-color-scheme="slate"] .md-header__button.md-icon[for="__search"] svg {
+  color: oklch(70.5% .015 286.067);
+}
+
+/* Improve search overlay */
+.md-search__overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Search results styling - Desktop only */
+@media (min-width: 60em) {
+  .md-search__output {
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Make header icons consistent size */
+.md-header svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.md-header__button.md-logo svg {
+  width: auto;
+  height: 1.5rem;
+}
+

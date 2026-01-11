@@ -1,0 +1,145 @@
+/* HTTP Method Badge Styling from Mirrored Site */
+
+/* Hide site title and Home link from sidebar */
+.md-nav--primary > .md-nav__title {
+  display: none;
+}
+
+.md-nav--primary > .md-nav__list > .md-nav__item:first-child {
+  display: none;
+}
+
+/* Increase font size of Guides and Resources headers */
+.md-nav--primary .md-nav__item--nested > .md-nav__link {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: oklch(21% .006 285.885);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  margin-bottom: calc(0.25rem * 3);
+}
+
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item--nested > .md-nav__link {
+  color: #fff;
+}
+
+/* Style the paragraph containing method badges */
+p:has(.method-badge) {
+  display: flex;
+  align-items: center;
+  gap: calc(0.25rem * 3);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+/* Style the code element as endpoint path */
+p:has(.method-badge) code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.75rem;
+  color: oklch(70.5% .015 286.067);
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+
+[data-md-color-scheme="slate"] p:has(.method-badge) code {
+  color: oklch(70.5% .015 286.067);
+}
+
+/* Base method badge styling */
+.method-badge {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.625rem;
+  line-height: calc(0.25rem * 6);
+  font-weight: 600;
+  border-radius: 0.5rem;
+  padding-left: calc(0.25rem * 1.5);
+  padding-right: calc(0.25rem * 1.5);
+  border: 1px solid;
+  border-style: solid;
+  box-shadow: 0 0 0 1px currentColor inset;
+}
+
+/* Add dot separator after badge using CSS */
+.method-badge::after {
+  content: '';
+  display: inline-block;
+  height: 0.125rem;
+  width: 0.125rem;
+  border-radius: 9999px;
+  background-color: #d4d4d8;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+[data-md-color-scheme="slate"] .method-badge::after {
+  background-color: #52525b;
+}
+
+/* GET method - Emerald */
+.method-get {
+  background-color: rgba(0, 210, 148, 0.1);
+  color: oklch(69.6% .17 162.48);
+  border-color: oklch(84.5% .143 164.978);
+  box-shadow: inset 0 0 0 1px oklch(84.5% .143 164.978);
+}
+
+[data-md-color-scheme="slate"] .method-get {
+  border-color: rgba(0, 210, 148, 0.3);
+  color: oklch(76.5% .177 163.223);
+}
+
+/* POST method - Sky Blue */
+.method-post {
+  background-color: rgba(0, 188, 254, 0.1);
+  color: oklch(68.5% .169 237.323);
+  border-color: oklch(82.8% .111 230.318);
+  box-shadow: inset 0 0 0 1px oklch(82.8% .111 230.318);
+}
+
+[data-md-color-scheme="slate"] .method-post {
+  border-color: rgba(0, 188, 254, 0.3);
+  color: oklch(74.6% .16 232.661);
+}
+
+/* PUT method - Amber */
+.method-put {
+  background-color: rgba(252, 187, 0, 0.1);
+  color: oklch(76.9% .188 70.08);
+  border-color: oklch(87.9% .169 91.605);
+  box-shadow: inset 0 0 0 1px oklch(87.9% .169 91.605);
+}
+
+[data-md-color-scheme="slate"] .method-put {
+  border-color: rgba(252, 187, 0, 0.3);
+  color: oklch(82.8% .189 84.429);
+}
+
+/* DELETE method - Rose/Red */
+.method-delete {
+  background-color: rgba(255, 235, 238, 0.5);
+  color: oklch(63.7% .237 25.331);
+  border-color: oklch(89.2% .058 10.001);
+  box-shadow: inset 0 0 0 1px oklch(89.2% .058 10.001);
+}
+
+[data-md-color-scheme="slate"] .method-delete {
+  background-color: rgba(255, 102, 127, 0.1);
+  border-color: rgba(255, 35, 87, 0.2);
+  color: oklch(71.2% .194 13.428);
+}
+
+/* PATCH method - Amber (same as PUT) */
+.method-patch {
+  background-color: rgba(252, 187, 0, 0.1);
+  color: oklch(76.9% .188 70.08);
+  border-color: oklch(87.9% .169 91.605);
+  box-shadow: inset 0 0 0 1px oklch(87.9% .169 91.605);
+}
+
+[data-md-color-scheme="slate"] .method-patch {
+  border-color: rgba(252, 187, 0, 0.3);
+  color: oklch(82.8% .189 84.429);
+}
+
