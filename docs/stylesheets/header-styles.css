@@ -1,5 +1,13 @@
 /* Enhanced Header Styling - Matching Mirrored Site */
 
+/* ============================================
+   IMPORTANT: Header Title Configuration
+   ============================================
+   The header should ONLY show the logo with "DigiVault Developers" text.
+   Page titles/headings should NEVER appear in the header nav bar.
+   This is enforced throughout this file with !important rules.
+   ============================================ */
+
 /* Header container */
 .md-header {
   background-color: rgba(255, 255, 255, 0.5);
@@ -212,11 +220,28 @@
   color: oklch(70.5% .015 286.067);
 }
 
-/* Hide header title on desktop (logo is enough) */
-@media (min-width: 64rem) {
-  .md-header__title {
-    display: none;
-  }
+/* Hide header title completely (logo with text is enough) */
+/* This prevents page titles from showing in header on scroll/navigation */
+.md-header__title {
+  display: none !important;
+}
+
+/* Hide the topic/page title that appears on scroll */
+.md-header__topic {
+  display: none !important;
+}
+
+/* Ensure logo always visible and takes up space */
+.md-header__button.md-logo {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Prevent any header state changes */
+.md-header[data-md-state="shadow"] .md-header__title,
+.md-header--shadow .md-header__title {
+  display: none !important;
 }
 
 /* Mobile/Responsive Layout Fixes */
@@ -236,10 +261,15 @@
     margin-right: auto;
   }
   
-  /* Logo after burger */
+  /* Hide logo completely on mobile (icon + DigiVault Developers text) */
   .md-header__button.md-logo {
-    order: 0;
-    margin-right: auto;
+    display: none !important;
+  }
+  
+  /* Hide logo text spans if they somehow render */
+  .logo-text-digivault,
+  .logo-text-developers {
+    display: none !important;
   }
   
   /* Search and theme toggle on right */

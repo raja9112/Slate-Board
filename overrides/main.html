@@ -5,7 +5,8 @@
   {{ super() }}
   <script>
     // Add logo text (Icon DigiVault Developers)
-    document.addEventListener('DOMContentLoaded', function() {
+    // Function to add logo text
+    function addLogoText() {
       const logo = document.querySelector('.md-header__button.md-logo');
       if (logo && !logo.querySelector('.logo-text-digivault')) {
         const digivault = document.createElement('span');
@@ -18,6 +19,18 @@
         
         logo.appendChild(digivault);
         logo.appendChild(developers);
+      }
+    }
+    
+    // Run on initial load
+    document.addEventListener('DOMContentLoaded', function() {
+      addLogoText();
+      
+      // Also subscribe to instant navigation events if available
+      if (typeof document$ !== 'undefined') {
+        document$.subscribe(function() {
+          setTimeout(addLogoText, 0);
+        });
       }
     });
     
