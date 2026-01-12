@@ -13,11 +13,19 @@
          <lastmod>2026-01-12</lastmod>
     </url>
     <url>
+         <loc>https://api.digivault.com/boost_transactions/</loc>
+         <lastmod>2026-01-12</lastmod>
+    </url>
+    <url>
          <loc>https://api.digivault.com/contacts/</loc>
          <lastmod>2026-01-12</lastmod>
     </url>
     <url>
          <loc>https://api.digivault.com/conversations/</loc>
+         <lastmod>2026-01-12</lastmod>
+    </url>
+    <url>
+         <loc>https://api.digivault.com/digivault_api/</loc>
          <lastmod>2026-01-12</lastmod>
     </url>
     <url>
