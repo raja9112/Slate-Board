@@ -336,6 +336,119 @@
   }
 }
 
+/* Mobile search results - Better touch targets and container sizing */
+@media (max-width: 59.99em) {
+  /* Fix search results container - Remove cramping and center */
+  .md-search__output {
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  
+  /* Search scroll wrapper - Allow full height and full width */
+  .md-search__scrollwrap {
+    max-height: calc(100vh - 4rem) !important;
+    height: auto !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* Search inner container - Full width */
+  .md-search__inner {
+    height: auto !important;
+    min-height: 100vh !important;
+    width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 !important;
+  }
+  
+  /* Search form - Just alignment fixes, keep desktop style */
+  .md-search__form {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    padding: 0.75rem 1rem !important;
+    width: 100% !important;
+    margin: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+  
+  /* Search icon - Vertical alignment */
+  .md-search__icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  /* Search input - Vertical alignment */
+  .md-search__input {
+    flex: 1 !important;
+    line-height: normal !important;
+    vertical-align: middle !important;
+  }
+  
+  /* Search options - Alignment */
+  .md-search__options {
+    display: flex !important;
+    align-items: center !important;
+  }
+  
+  /* Search results list - Full width */
+  .md-search-result__list {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* Search result metadata - Just increase height and align */
+  .md-search-result__meta {
+    min-height: 56px !important;
+    height: auto !important;
+    padding: 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    line-height: 1.5 !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  
+  /* Search result items - Increase height and full width */
+  .md-search-result__item {
+    min-height: 60px !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  
+  /* Search result article - Better spacing */
+  .md-search-result__article {
+    padding: 1rem !important;
+    min-height: 60px !important;
+    width: 100% !important;
+  }
+  
+  /* Search result title - Align properly */
+  .md-search-result__title {
+    line-height: 1.5 !important;
+    margin-bottom: 0.25rem !important;
+  }
+  
+  /* Search result teaser - Align properly */
+  .md-search-result__teaser {
+    line-height: 1.5 !important;
+  }
+}
+
 /* Make header icons consistent size */
 .md-header svg {
   width: 1.25rem;
