@@ -164,6 +164,9 @@ nav:
       - Pagination: pagination.md
       - Errors: errors.md
       - Webhooks: webhooks.md
+      - Manage Transactions:
+          - Create Transactions: digivault_api.md
+          - Boost Transactions: boost_transactions.md
   - Resources:
       - Contacts: contacts.md
       - Conversations: conversations.md

@@ -22,6 +22,24 @@
   --bg-gradient-cta: linear-gradient(90deg, #04b9b2, #1ec677);
 }
 
+/* Sidebar nested section labels (e.g., Manage Transactions) */
+.md-nav__item--nested > label.md-nav__link {
+  text-transform: none !important;
+  font-weight: 500 !important;
+  font-size: .73rem !important;
+  letter-spacing: 0 !important;
+  margin-top: 0.4rem;
+}
+
+/* Emphasize top-level section titles (e.g., Guides, Resources) */
+.md-nav__title,
+.md-nav--primary .md-nav__item--section > .md-nav__link {
+  font-size: 0.85rem !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.01em !important;
+}
+
 /* CTA gradient utility */
 :root {
   --bg-gradient-cta: linear-gradient(90deg, #04b9b2, #1ec677);
@@ -536,6 +554,10 @@
 .md-header__button.md-logo svg {
   width: auto;
   height: 1.5rem;
+}
+
+:root {
+  --bg-gradient-cta: linear-gradient(90deg, #04b9b2, #1ec677);
 }
 
 /* CTA gradient utility */
