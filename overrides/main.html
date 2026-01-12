@@ -4,36 +4,6 @@
 {% block scripts %}
   {{ super() }}
   <script>
-    // Add logo text (Icon DigiVault Developers)
-    // Function to add logo text
-    function addLogoText() {
-      const logo = document.querySelector('.md-header__button.md-logo');
-      if (logo && !logo.querySelector('.logo-text-digivault')) {
-        const digivault = document.createElement('span');
-        digivault.className = 'logo-text-digivault';
-        digivault.textContent = 'DigiVault';
-        
-        const developers = document.createElement('span');
-        developers.className = 'logo-text-developers';
-        developers.textContent = 'Developers';
-        
-        logo.appendChild(digivault);
-        logo.appendChild(developers);
-      }
-    }
-    
-    // Run on initial load
-    document.addEventListener('DOMContentLoaded', function() {
-      addLogoText();
-      
-      // Also subscribe to instant navigation events if available
-      if (typeof document$ !== 'undefined') {
-        document$.subscribe(function() {
-          setTimeout(addLogoText, 0);
-        });
-      }
-    });
-    
     // Theme toggle matching mirrored site
     function initTheme() {
       const theme = localStorage.getItem('theme') || 'system';

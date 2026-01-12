@@ -13,8 +13,8 @@ site_url: https://api.digivault.com
 theme:
   name: material
   custom_dir: overrides
-  logo: assets/digivault-logo.svg
-  favicon: favicon.ico
+  logo: assets/digivault-logo.png
+  favicon: assets/favicon-digivault.png
   
   # Colors matching the mirrored site
   palette:
