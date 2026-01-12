@@ -20,85 +20,233 @@ Sources/destinations can be OTAs, vault accounts, pre-whitelisted internal walle
 
 ### Vault account to vault account (single destination, ETH)
 
-```ts
-const transactionPayload = {
-  assetId: "ETH",
-  amount: "0.001",
-  source: { type: TransferPeerPathType.VaultAccount, id: "0" },
-  destination: { type: TransferPeerPathType.VaultAccount, id: "1" },
-  note: "Your first transaction!",
-};
+=== "TypeScript (ts-sdk)"
 
-const createTransaction = async (transactionPayload: TransactionRequest) => {
-  try {
-    const res = await fireblocks.transactions.createTransaction({
-      transactionRequest: transactionPayload,
-    });
-    console.log(JSON.stringify(res.data, null, 2));
-    return res.data;
-  } catch (e) {
-    console.error(e);
-  }
-};
+    ```ts
+    const transactionPayload = {
+      assetId: "ETH",
+      amount: "0.001",
+      source: { type: TransferPeerPathType.VaultAccount, id: "0" },
+      destination: { type: TransferPeerPathType.VaultAccount, id: "1" },
+      note: "Your first transaction!",
+    };
 
-createTransaction(transactionPayload);
-```
+    const createTransaction = async (transactionPayload: TransactionRequest) => {
+      try {
+        const res = await fireblocks.transactions.createTransaction({
+          transactionRequest: transactionPayload,
+        });
+        console.log(JSON.stringify(res.data, null, 2));
+        return res.data;
+      } catch (e) {
+        console.error(e);
+      }
+    };
+
+    createTransaction(transactionPayload);
+    ```
+
+=== "cURL"
+
+    ```bash
+    curl -X POST https://api.fireblocks.io/v1/transactions \
+      -H "X-API-Key: <API_KEY>" \
+      -H "Authorization: Bearer <JWT>" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "assetId": "ETH",
+        "amount": "0.001",
+        "source": { "type": "VAULT_ACCOUNT", "id": "0" },
+        "destination": { "type": "VAULT_ACCOUNT", "id": "1" },
+        "note": "Your first transaction!"
+      }'
+    ```
+
+=== "JavaScript (fireblocks-sdk-js)"
+
+    ```js
+    const { FireblocksSDK } = require("fireblocks-sdk");
+    const fs = require("fs");
+
+    const apiKey = "<API_KEY>";
+    const secret = fs.readFileSync("<PATH_TO_SECRET>", "utf8");
+    const fb = new FireblocksSDK(secret, apiKey);
+
+    (async () => {
+      const tx = await fb.createTransaction({
+        assetId: "ETH",
+        amount: "0.001",
+        source: { type: "VAULT_ACCOUNT", id: "0" },
+        destination: { type: "VAULT_ACCOUNT", id: "1" },
+        note: "Your first transaction!",
+      });
+      console.log(tx);
+    })();
+    ```
+
+=== "Python (fireblocks-sdk-py)"
+
+    ```python
+    from fireblocks_sdk import FireblocksSDK
+    from pathlib import Path
+
+    api_key = "<API_KEY>"
+    secret = Path("<PATH_TO_SECRET>").read_text()
+    fb = FireblocksSDK(private_key=secret, api_key=api_key)
+
+    tx = fb.create_transaction(
+        asset_id="ETH",
+        amount="0.001",
+        source={"type": "VAULT_ACCOUNT", "id": "0"},
+        destination={"type": "VAULT_ACCOUNT", "id": "1"},
+        note="Your first transaction!",
+    )
+    print(tx)
+    ```
 
 ### Multiple-destination transfer (UTXO, BTC)
 
-```ts
-const transactionPayload = {
-  assetId: "BTC",
-  amount: "0.001",
-  source: { type: TransferPeerPathType.VaultAccount, id: "1" },
-  destinations: [
-    { amount: "0.0005", destination: { type: TransferPeerPathType.VaultAccount, id: "2" } },
-    { amount: "0.0005", destination: { type: TransferPeerPathType.VaultAccount, id: "3" } },
-  ],
-  note: "Your first multiple destination transaction!",
-};
+=== "TypeScript (ts-sdk)"
 
-const createTransaction = async (transactionPayload: TransactionRequest) => {
-  try {
-    const res = await fireblocks.transactions.createTransaction({
-      transactionRequest: transactionPayload,
-    });
-    console.log(JSON.stringify(res.data, null, 2));
-    return res.data;
-  } catch (e) {
-    console.error(e);
-  }
-};
-createTransaction(transactionPayload);
-```
+    ```ts
+    const transactionPayload = {
+      assetId: "BTC",
+      amount: "0.001",
+      source: { type: TransferPeerPathType.VaultAccount, id: "1" },
+      destinations: [
+        { amount: "0.0005", destination: { type: TransferPeerPathType.VaultAccount, id: "2" } },
+        { amount: "0.0005", destination: { type: TransferPeerPathType.VaultAccount, id: "3" } },
+      ],
+      note: "Your first multiple destination transaction!",
+    };
+
+    const createTransaction = async (transactionPayload: TransactionRequest) => {
+      try {
+        const res = await fireblocks.transactions.createTransaction({
+          transactionRequest: transactionPayload,
+        });
+        console.log(JSON.stringify(res.data, null, 2));
+        return res.data;
+      } catch (e) {
+        console.error(e);
+      }
+    };
+    createTransaction(transactionPayload);
+    ```
+
+=== "JavaScript (fireblocks-sdk-js)"
+
+    ```js
+    const { FireblocksSDK } = require("fireblocks-sdk");
+    const fs = require("fs");
+    const fb = new FireblocksSDK(fs.readFileSync("<PATH_TO_SECRET>", "utf8"), "<API_KEY>");
+
+    (async () => {
+      const tx = await fb.createTransaction({
+        assetId: "BTC",
+        amount: "0.001",
+        source: { type: "VAULT_ACCOUNT", id: "1" },
+        destinations: [
+          { amount: "0.0005", destination: { type: "VAULT_ACCOUNT", id: "2" } },
+          { amount: "0.0005", destination: { type: "VAULT_ACCOUNT", id: "3" } },
+        ],
+        note: "Your first multiple destination transaction!",
+      });
+      console.log(tx);
+    })();
+    ```
+
+=== "Python (fireblocks-sdk-py)"
+
+    ```python
+    from fireblocks_sdk import FireblocksSDK
+    from pathlib import Path
+
+    fb = FireblocksSDK(Path("<PATH_TO_SECRET>").read_text(), "<API_KEY>")
+    tx = fb.create_transaction(
+        asset_id="BTC",
+        amount="0.001",
+        source={"type": "VAULT_ACCOUNT", "id": "1"},
+        destinations=[
+            {"amount": "0.0005", "destination": {"type": "VAULT_ACCOUNT", "id": "2"}},
+            {"amount": "0.0005", "destination": {"type": "VAULT_ACCOUNT", "id": "3"}},
+        ],
+        note="Your first multiple destination transaction!",
+    )
+    print(tx)
+    ```
 
 ### Vault account to one-time address (OTA, ETH)
 
-```ts
-const transactionPayload = {
-  assetId: "ETH",
-  amount: "0.001",
-  source: { type: TransferPeerPathType.VaultAccount, id: "1" },
-  destination: {
-    type: TransferPeerPathType.OneTimeAddress,
-    oneTimeAddress: { address: "0x13277a70e3F48EEAD9C8a8bab12EbEDbC3DB6446" },
-  },
-  note: "Your first OTA transaction!",
-};
+=== "TypeScript (ts-sdk)"
 
-const createTransaction = async (transactionPayload: TransactionRequest) => {
-  try {
-    const res = await fireblocks.transactions.createTransaction({
-      transactionRequest: transactionPayload,
-    });
-    console.log(JSON.stringify(res.data, null, 2));
-    return res.data;
-  } catch (e) {
-    console.error(e);
-  }
-};
-createTransaction(transactionPayload);
-```
+    ```ts
+    const transactionPayload = {
+      assetId: "ETH",
+      amount: "0.001",
+      source: { type: TransferPeerPathType.VaultAccount, id: "1" },
+      destination: {
+        type: TransferPeerPathType.OneTimeAddress,
+        oneTimeAddress: { address: "0x13277a70e3F48EEAD9C8a8bab12EbEDbC3DB6446" },
+      },
+      note: "Your first OTA transaction!",
+    };
+
+    const createTransaction = async (transactionPayload: TransactionRequest) => {
+      try {
+        const res = await fireblocks.transactions.createTransaction({
+          transactionRequest: transactionPayload,
+        });
+        console.log(JSON.stringify(res.data, null, 2));
+        return res.data;
+      } catch (e) {
+        console.error(e);
+      }
+    };
+    createTransaction(transactionPayload);
+    ```
+
+=== "JavaScript (fireblocks-sdk-js)"
+
+    ```js
+    const { FireblocksSDK } = require("fireblocks-sdk");
+    const fs = require("fs");
+    const fb = new FireblocksSDK(fs.readFileSync("<PATH_TO_SECRET>", "utf8"), "<API_KEY>");
+
+    (async () => {
+      const tx = await fb.createTransaction({
+        assetId: "ETH",
+        amount: "0.001",
+        source: { type: "VAULT_ACCOUNT", id: "1" },
+        destination: {
+          type: "ONE_TIME_ADDRESS",
+          oneTimeAddress: { address: "0x13277a70e3F48EEAD9C8a8bab12EbEDbC3DB6446" },
+        },
+        note: "Your first OTA transaction!",
+      });
+      console.log(tx);
+    })();
+    ```
+
+=== "Python (fireblocks-sdk-py)"
+
+    ```python
+    from fireblocks_sdk import FireblocksSDK
+    from pathlib import Path
+
+    fb = FireblocksSDK(Path("<PATH_TO_SECRET>").read_text(), "<API_KEY>")
+    tx = fb.create_transaction(
+        asset_id="ETH",
+        amount="0.001",
+        source={"type": "VAULT_ACCOUNT", "id": "1"},
+        destination={
+            "type": "ONE_TIME_ADDRESS",
+            "oneTimeAddress": {"address": "0x13277a70e3F48EEAD9C8a8bab12EbEDbC3DB6446"},
+        },
+        note="Your first OTA transaction!",
+    )
+    print(tx)
+    ```
 
 > API idempotency: use `externalTxId` to prevent duplicate processing.
 
