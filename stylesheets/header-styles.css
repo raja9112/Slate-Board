@@ -338,8 +338,15 @@
 
 /* Mobile search results - Better touch targets and container sizing */
 @media (max-width: 59.99em) {
+  /* Hide mobile search chrome until the toggle is open */
+  #__search:not(:checked) ~ .md-header .md-search__overlay,
+  #__search:not(:checked) ~ .md-header .md-search__inner,
+  #__search:not(:checked) ~ .md-header .md-search__output {
+    display: none !important;
+  }
+
   /* Fix search results container - Remove cramping and center */
-  .md-search__output {
+  #__search:checked ~ .md-header .md-search__output {
     max-height: none !important;
     height: auto !important;
     overflow: visible !important;
@@ -350,7 +357,7 @@
   }
   
   /* Search scroll wrapper - Allow full height and full width */
-  .md-search__scrollwrap {
+  #__search:checked ~ .md-header .md-search__scrollwrap {
     max-height: calc(100vh - 4rem) !important;
     height: auto !important;
     overflow-y: auto !important;
@@ -363,7 +370,7 @@
   }
   
   /* Search inner container - Full width */
-  .md-search__inner {
+  #__search:checked ~ .md-header .md-search__inner {
     height: auto !important;
     min-height: 100vh !important;
     width: 100% !important;
@@ -373,7 +380,7 @@
   }
   
   /* Search form - Just alignment fixes, keep desktop style */
-  .md-search__form {
+  #__search:checked ~ .md-header .md-search__form {
     display: flex !important;
     align-items: center !important;
     gap: 0.5rem !important;
@@ -385,34 +392,34 @@
   }
   
   /* Search icon - Vertical alignment */
-  .md-search__icon {
+  #__search:checked ~ .md-header .md-search__icon {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
   }
   
   /* Search input - Vertical alignment */
-  .md-search__input {
+  #__search:checked ~ .md-header .md-search__input {
     flex: 1 !important;
     line-height: normal !important;
     vertical-align: middle !important;
   }
   
   /* Search options - Alignment */
-  .md-search__options {
+  #__search:checked ~ .md-header .md-search__options {
     display: flex !important;
     align-items: center !important;
   }
   
   /* Search results list - Full width */
-  .md-search-result__list {
+  #__search:checked ~ .md-header .md-search-result__list {
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
   }
   
   /* Search result metadata - Just increase height and align */
-  .md-search-result__meta {
+  #__search:checked ~ .md-header .md-search-result__meta {
     min-height: 56px !important;
     height: auto !important;
     padding: 1rem !important;
@@ -424,27 +431,27 @@
   }
   
   /* Search result items - Increase height and full width */
-  .md-search-result__item {
+  #__search:checked ~ .md-header .md-search-result__item {
     min-height: 60px !important;
     width: 100% !important;
     margin: 0 !important;
   }
   
   /* Search result article - Better spacing */
-  .md-search-result__article {
+  #__search:checked ~ .md-header .md-search-result__article {
     padding: 1rem !important;
     min-height: 60px !important;
     width: 100% !important;
   }
   
   /* Search result title - Align properly */
-  .md-search-result__title {
+  #__search:checked ~ .md-header .md-search-result__title {
     line-height: 1.5 !important;
     margin-bottom: 0.25rem !important;
   }
   
   /* Search result teaser - Align properly */
-  .md-search-result__teaser {
+  #__search:checked ~ .md-header .md-search-result__teaser {
     line-height: 1.5 !important;
   }
 }
