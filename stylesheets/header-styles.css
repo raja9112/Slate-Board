@@ -22,13 +22,15 @@
   --bg-gradient-cta: linear-gradient(90deg, #04b9b2, #1ec677);
 }
 
-/* Sidebar nested section labels (e.g., Manage Transactions) */
-.md-nav__item--nested > label.md-nav__link {
-  text-transform: none !important;
-  font-weight: 200 !important;
-  font-size: 0.7rem !important;
-  letter-spacing: 0 !important;
-  margin-top: 0.4rem;
+/* Sidebar nested section labels (e.g., Manage Transactions) - Desktop only */
+@media screen and (min-width: 76.25em) {
+  .md-nav__item--nested > label.md-nav__link {
+    text-transform: none !important;
+    font-weight: 400 !important;
+    font-size: 0.7rem !important;
+    letter-spacing: 0 !important;
+    margin-top: 0;
+  }
 }
 
 /* Emphasize top-level section titles (e.g., Guides, Resources) */
@@ -637,19 +639,21 @@ input[type="reset"]:active {
   box-shadow: none;
 }
 
-/* Sidebar hover and scrollbar styling */
-.md-sidebar .md-nav__link:hover,
-.md-sidebar .md-nav__link:focus-visible,
-.md-sidebar .md-nav__item--active > .md-nav__link,
-.md-sidebar .md-nav__item--active > .md-nav__link:hover,
-.md-sidebar .md-nav__item--active > .md-nav__link:focus-visible {
-  color: #04b9b2;
-}
+/* Sidebar hover and scrollbar styling (Desktop only) */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar .md-nav__link:hover,
+  .md-sidebar .md-nav__link:focus-visible,
+  .md-sidebar .md-nav__item--active > .md-nav__link,
+  .md-sidebar .md-nav__item--active > .md-nav__link:hover,
+  .md-sidebar .md-nav__item--active > .md-nav__link:focus-visible {
+    color: #04b9b2 !important;
+  }
 
-.md-sidebar .md-nav__link--active,
-.md-sidebar .md-nav__link--active:hover,
-.md-sidebar .md-nav__link--active:focus-visible {
-  color: #04b9b2;
+  .md-sidebar .md-nav__link--active,
+  .md-sidebar .md-nav__link--active:hover,
+  .md-sidebar .md-nav__link--active:focus-visible {
+    color: #04b9b2 !important;
+  }
 }
 
 .md-sidebar__scrollwrap {
