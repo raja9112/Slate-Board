@@ -2,58 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://api.digivault.com/</loc>
-         <lastmod>2026-01-12</lastmod>
+         <lastmod>2026-01-13</lastmod>
     </url>
     <url>
          <loc>https://api.digivault.com/attachments/</loc>
-         <lastmod>2026-01-12</lastmod>
+         <lastmod>2026-01-13</lastmod>
     </url>
     <url>
          <loc>https://api.digivault.com/authentication/</loc>
-         <lastmod>2026-01-12</lastmod>
+         <lastmod>2026-01-13</lastmod>
     </url>
     <url>
          <loc>https://api.digivault.com/boost_transactions/</loc>
-         <lastmod>2026-01-12</lastmod>
+         <lastmod>2026-01-13</lastmod>
     </url>
     <url>
          <loc>https://api.digivault.com/contacts/</loc>
-         <lastmod>2026-01-12</lastmod>
+         <lastmod>2026-01-13</lastmod>
     </url>
     <url>
          <loc>https://api.digivault.com/conversations/</loc>
-         <lastmod>2026-01-12</lastmod>
+         <lastmod>2026-01-13</lastmod>
     </url>
     <url>
          <loc>https://api.digivault.com/digivault_api/</loc>
-         <lastmod>2026-01-12</lastmod>
+         <lastmod>2026-01-13</lastmod>
     </url>
     <url>
          <loc>https://api.digivault.com/errors/</loc>
-         <lastmod>2026-01-12</lastmod>
+         <lastmod>2026-01-13</lastmod>
     </url>
     <url>
          <loc>https://api.digivault.com/groups/</loc>
-         <lastmod>2026-01-12</lastmod>
+         <lastmod>2026-01-13</lastmod>
     </url>
     <url>
          <loc>https://api.digivault.com/messages/</loc>
-         <lastmod>2026-01-12</lastmod>
+         <lastmod>2026-01-13</lastmod>
     </url>
     <url>
          <loc>https://api.digivault.com/pagination/</loc>
-         <lastmod>2026-01-12</lastmod>
+         <lastmod>2026-01-13</lastmod>
     </url>
     <url>
          <loc>https://api.digivault.com/quickstart/</loc>
-         <lastmod>2026-01-12</lastmod>
+         <lastmod>2026-01-13</lastmod>
     </url>
     <url>
          <loc>https://api.digivault.com/sdks/</loc>
-         <lastmod>2026-01-12</lastmod>
+         <lastmod>2026-01-13</lastmod>
     </url>
     <url>
          <loc>https://api.digivault.com/webhooks/</loc>
-         <lastmod>2026-01-12</lastmod>
+         <lastmod>2026-01-13</lastmod>
     </url>
 </urlset>

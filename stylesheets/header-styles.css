@@ -54,6 +54,10 @@
   box-shadow: none !important;
 }
 
+.tabbed-button {
+  display: none !important;
+}
+
 /* CTA gradient utility */
 :root {
   --bg-gradient-cta: linear-gradient(90deg, #04b9b2, #1ec677);
