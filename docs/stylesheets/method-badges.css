@@ -9,18 +9,19 @@
   display: none;
 }
 
-/* Increase font size of Guides and Resources headers */
-.md-nav--primary .md-nav__item--nested > .md-nav__link {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: oklch(21% .006 285.885);
-  text-transform: uppercase;
-  letter-spacing: 0.025em;
-  margin-bottom: calc(0.25rem * 3);
-}
+/* Style nested section labels to match other nav items (Desktop only) */
+@media screen and (min-width: 76.25em) {
+  .md-nav--primary .md-nav__item--nested > .md-nav__link {
+    font-size: 0.7rem;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    margin-bottom: 0;
+  }
 
-[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item--nested > .md-nav__link {
-  color: #fff;
+  [data-md-color-scheme="slate"] .md-nav--primary .md-nav__item--nested > .md-nav__link {
+    color: var(--md-default-fg-color);
+  }
 }
 
 /* Style the paragraph containing method badges */

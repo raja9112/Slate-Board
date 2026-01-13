@@ -1,0 +1,158 @@
+/* ============================================
+   Professional Tabbed Sidebar Navigation (Desktop Only)
+   ============================================ */
+
+/* Desktop-only styles */
+@media screen and (min-width: 76.25em) {
+  
+  /* Hide the redundant section headers (GUIDES, RESOURCES) */
+  .md-nav--primary .md-nav__item--section > .md-nav__link {
+    display: none !important;
+  }
+
+  /* Move sidebar to the left and align with breadcrumb */
+  .md-sidebar--primary {
+    left: 0 !important;
+  }
+
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    margin-left: 0 !important;
+    padding-top: 0;
+  }
+
+  /* Tab container */
+  .md-sidebar-tabs {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--md-default-bg-color);
+    z-index: 100;
+    display: flex;
+    gap: 2rem;
+    padding: 0.5rem 0.75rem 0 0.75rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  [data-md-color-scheme="slate"] .md-sidebar-tabs {
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Tab button styling - clean and minimal */
+  .md-sidebar-tab {
+    padding: 0.375rem 0;
+    font-size: 0.7rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    background: transparent;
+    color: var(--md-default-fg-color--light);
+    border: none;
+    white-space: nowrap;
+    position: relative;
+    padding-bottom: 0.625rem;
+  }
+
+  .md-sidebar-tab:hover {
+    background: linear-gradient(90deg, #04b9b2, #1ec677);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Active tab - gradient text and underline */
+  .md-sidebar-tab.active {
+    background: linear-gradient(90deg, #04b9b2, #1ec677);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-weight: 600;
+  }
+
+  .md-sidebar-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #04b9b2, #1ec677);
+  }
+
+  /* Navigation items styling */
+  .md-nav--primary .md-nav__item {
+    margin-bottom: 0.125rem;
+  }
+
+  .md-nav--primary .md-nav__link {
+    border-radius: 0.375rem;
+    margin: 0;
+    padding: 0.5rem 0;
+    transition: all 0.15s ease;
+    font-size: 0.7rem;
+  }
+
+  .md-nav--primary .md-nav__link:hover {
+    color: #04b9b2 !important;
+  }
+
+  /* Active link styling */
+  .md-nav--primary .md-nav__link--active {
+    color: #04b9b2 !important;
+    font-weight: 600;
+  }
+
+  /* Hide inactive tab content with smooth fade */
+  .md-nav[data-tab-section] {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .md-nav[data-tab-section].active {
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Nested sub-items indentation (children under Manage Transactions) */
+  .md-nav--primary .md-nav__item--nested .md-nav__item .md-nav__link {
+    font-size: 0.68rem;
+    padding-left: 1rem;
+    padding-right: 0;
+    color: var(--md-default-fg-color--light);
+  }
+
+  /* Remove extra padding for cleaner look */
+  .md-nav--primary > .md-nav__list {
+    padding-top: 0.25rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Smooth scroll behavior */
+  .md-sidebar__scrollwrap {
+    scroll-behavior: smooth;
+  }
+
+  /* Better focus states for accessibility */
+  .md-sidebar-tab:focus {
+    outline: 2px solid rgba(4, 185, 178, 0.5);
+    outline-offset: 2px;
+  }
+
+  .md-sidebar-tab:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+/* Mobile view keeps default MkDocs styling - no custom styles applied */

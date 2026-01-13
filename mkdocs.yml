@@ -125,6 +125,7 @@ extra_css:
   # - _next/static/css/714180f250899703.css
   - stylesheets/method-badges.css
   - stylesheets/header-styles.css
+  - stylesheets/sidebar-tabs.css
 
 extra_javascript: []
 
